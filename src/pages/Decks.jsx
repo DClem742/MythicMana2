@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { deckService } from '../services/deckService'
 import DeckForm from '../components/DeckForm'
+import DeckBuilder from '../components/DeckBuilder'
+
 
 function Decks() {
   const [decks, setDecks] = useState([])
@@ -51,6 +53,7 @@ function Decks() {
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Create New Deck</h2>
           <DeckForm onSubmit={handleCreateDeck} />
+          <DeckBuilder />
         </div>
       )}
 

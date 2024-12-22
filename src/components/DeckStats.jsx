@@ -51,7 +51,7 @@ function DeckStats({ cards }) {
 
   // Card Type Distribution
   const typeCount = cards.reduce((acc, card) => {
-    const type = card.type_line.split('—')[0].trim()
+    const type = card?.type_line?.split('—')[0]?.trim() || 'Unknown'
     acc[type] = (acc[type] || 0) + card.quantity
     return acc
   }, {})
